@@ -1,0 +1,155 @@
+/* Responsive Layout Adjustments */
+
+@media (max-width: 992px) {
+  /* General */
+  body {
+    line-height: 1.5;
+  }
+
+  /* Hero Section */
+  .hero-heading {
+    font-size: 2.8rem;
+  }
+  .hero-subheading {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Detail Page Layout */
+  .detail-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .detail-main-info-card {
+    padding: 2rem;
+    gap: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detail-sub-meta {
+    justify-content: center;
+  }
+
+  .detail-tags {
+    justify-content: center;
+  }
+
+  /* Footer Layout */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer-brand-column {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 5rem 0 3rem 0;
+  }
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+
+  /* Search Box */
+  .search-box {
+    padding: 6px 6px 6px 16px;
+  }
+  .search-input {
+    font-size: 0.95rem;
+  }
+  .search-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    padding: 1.5rem;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  /* Section Header */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Colleges Grid */
+  .colleges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Course Details Table */
+  .courses-table th, .courses-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* College Details Side Panel */
+  .detail-card-panel {
+    padding: 1.5rem;
+  }
+
+  /* Footer Layout */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-brand-column {
+    grid-column: span 1;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller screens */
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+  .detail-title {
+    font-size: 1.6rem;
+  }
+  .detail-logo {
+    width: 90px;
+    height: 90px;
+    font-size: 2.2rem;
+    border-radius: 16px;
+  }
+  .panel-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,832 @@
+Found 166 broken/unreachable websites:
+
+ID: 2
+Name: College of Engineering, Pune (COEP)
+URL: https://www.coep.org.in
+Status: Error: fetch failed
+---
+ID: 4
+Name: Pune Institute of Computer Technology (PICT)
+URL: https://pict.edu
+Status: 403
+---
+ID: 11
+Name: Government Medical College, Nagpur
+URL: https://gmcnagpur.edu.in
+Status: Error: fetch failed
+---
+ID: 13
+Name: Government College of Pharmacy, Karad
+URL: http://gcp.karad.ac.in
+Status: Error: fetch failed
+---
+ID: 16
+Name: Sir J.J. College of Architecture
+URL: https://www.sirjjarchitecture.org
+Status: Error: fetch failed
+---
+ID: 17
+Name: Government College of Agriculture, Nagpur
+URL: https://gcnagpur.com
+Status: Error: fetch failed
+---
+ID: 21
+Name: D.Y. Patil College of Engineering, Pune
+URL: https://www.dypatilpune.ac.in
+Status: Error: fetch failed
+---
+ID: 23
+Name: College of Agricultural Engineering, Rahuri
+URL: https://caer.mpkv.ac.in
+Status: Error: fetch failed
+---
+ID: 24
+Name: Abhinav Education Society's College of Architecture, Pune
+URL: https://aescap.edu.in
+Status: Error: fetch failed
+---
+ID: 25
+Name: Sir Vithaldas Thackersey College of Home Science
+URL: https://svtias.edu.in
+Status: Error: fetch failed
+---
+ID: 27
+Name: RV College of Engineering (RVCE)
+URL: https://www.rvce.edu.in
+Status: Error: fetch failed
+---
+ID: 33
+Name: JSS College of Pharmacy
+URL: https://jsscp.edu.in
+Status: Error: fetch failed
+---
+ID: 34
+Name: Manipal College of Nursing
+URL: https://mcn.manipal.edu
+Status: Error: fetch failed
+---
+ID: 35
+Name: Government Law College, Bangalore
+URL: http://glcbangalore.org
+Status: Error: fetch failed
+---
+ID: 36
+Name: Visvesvaraya Technological University (VTU)
+URL: https://vtu.ac.in
+Status: Timeout
+---
+ID: 38
+Name: University of Agricultural Sciences, Dharwad
+URL: https://uasd.edu.in
+Status: Error: fetch failed
+---
+ID: 39
+Name: Karnataka Polytechnic, Mangaluru
+URL: https://karnatakapolytechnic.edu.in
+Status: Error: fetch failed
+---
+ID: 40
+Name: Mysore Medical College & Research Institute
+URL: https://mmcri.ac.in
+Status: Error: fetch failed
+---
+ID: 46
+Name: SDM College of Dental Sciences, Dharwad
+URL: https://sdmcdsh.ac.in
+Status: Error: fetch failed
+---
+ID: 47
+Name: Government First Grade College, Mysuru
+URL: https://gfgcmysuru.edu.in
+Status: Error: fetch failed
+---
+ID: 49
+Name: PSG College of Technology
+URL: https://www.psgtech.edu
+Status: Error: fetch failed
+---
+ID: 53
+Name: Madras Medical College (MMC)
+URL: https://mmcri.ac.in
+Status: Error: fetch failed
+---
+ID: 57
+Name: Government Law College, Chennai
+URL: https://glcchennai.ac.in
+Status: Error: fetch failed
+---
+ID: 59
+Name: JSS College of Arts, Commerce & Science, Mysuru
+URL: https://jssacsooty.edu.in
+Status: Error: fetch failed
+---
+ID: 61
+Name: Government Medical College & Hospital, Thanjavur
+URL: https://gmcthanjavur.ac.in
+Status: Error: fetch failed
+---
+ID: 62
+Name: PSG College of Pharmacy
+URL: https://psgcp.edu.in
+Status: Error: fetch failed
+---
+ID: 65
+Name: IIT Madras Research Park (Taramani)
+URL: https://iitmrp.edu.in
+Status: Error: fetch failed
+---
+ID: 66
+Name: Institute of Hotel Management, Chennai
+URL: https://ihm-chennai.tn.gov.in
+Status: Error: fetch failed
+---
+ID: 68
+Name: Gandhigram Rural Institute
+URL: https://www.gandhigramuniversity.ac.in
+Status: Error: fetch failed
+---
+ID: 71
+Name: Delhi Technological University (DTU)
+URL: https://www.dtu.ac.in
+Status: Timeout
+---
+ID: 85
+Name: Maulana Azad Medical College (MAMC)
+URL: https://mamc.ac.in
+Status: Error: fetch failed
+---
+ID: 90
+Name: Indian Institute of Management (IIM) Lucknow
+URL: https://www.iiml.ac.in
+Status: Timeout
+---
+ID: 92
+Name: Aligarh Muslim University (AMU)
+URL: https://www.amu.ac.in
+Status: Error: fetch failed
+---
+ID: 98
+Name: Era's Lucknow Medical College
+URL: https://www.eralucknow.com
+Status: Error: fetch failed
+---
+ID: 99
+Name: Amity University Lucknow
+URL: https://www.amity.edu/lko
+Status: 404
+---
+ID: 104
+Name: UP Rural Institute of Medical Sciences & Research
+URL: https://www.rims.up.gov.in
+Status: Error: fetch failed
+---
+ID: 105
+Name: Chhatrapati Shahu Ji Maharaj University
+URL: https://www.kanpuruniversity.org
+Status: Timeout
+---
+ID: 109
+Name: Indian Institute of Technology (IIT) Kharagpur
+URL: https://www.iitkgp.ac.in
+Status: Error: fetch failed
+---
+ID: 111
+Name: Jadavpur University
+URL: https://jadavpuruniversity.in
+Status: Error: fetch failed
+---
+ID: 117
+Name: Bidhan Chandra Krishi Viswavidyalaya
+URL: https://bckv.ac.in
+Status: Error: fetch failed
+---
+ID: 121
+Name: Institute of Hotel Management, Kolkata
+URL: https://ihmkolkata.ac.in
+Status: Error: fetch failed
+---
+ID: 123
+Name: Calcutta School of Music
+URL: https://www.calcuttaschoolofmusic.com
+Status: Error: fetch failed
+---
+ID: 127
+Name: National Institute of Technology (NIT) Silchar (West Bengal Campus)
+URL: https://nitsilchar.ac.in
+Status: Error: fetch failed
+---
+ID: 129
+Name: Nirma University
+URL: https://nirmauni.ac.in
+Status: Error: fetch failed
+---
+ID: 132
+Name: M.S. University of Baroda
+URL: https://www.msubaroda.ac.in
+Status: Error: fetch failed
+---
+ID: 134
+Name: Ahmedabad University
+URL: https://ahduni.edu.in
+Status: 403
+---
+ID: 135
+Name: B.J. Medical College, Ahmedabad
+URL: https://bjmcahmedabad.ac.in
+Status: Error: fetch failed
+---
+ID: 136
+Name: B.N. Patel Institute of Paramedical & Science
+URL: https://bnpips.edu.in
+Status: Error: fetch failed
+---
+ID: 144
+Name: Sumandeep Vidyapeeth
+URL: https://sumandeepuniversity.co.in
+Status: Error: fetch failed
+---
+ID: 146
+Name: Gujarat Ayurved University
+URL: https://gau.ac.in
+Status: Error: fetch failed
+---
+ID: 149
+Name: University of Rajasthan
+URL: https://www.uniraj.ac.in
+Status: Timeout
+---
+ID: 150
+Name: SMS Medical College & Hospital
+URL: https://smsmch.rajasthan.gov.in
+Status: Error: fetch failed
+---
+ID: 152
+Name: Rajasthan Technical University
+URL: https://www.rtu.ac.in
+Status: 403
+---
+ID: 154
+Name: Dr. S.N. Medical College, Jodhpur
+URL: https://snmcjdh.ac.in
+Status: Error: fetch failed
+---
+ID: 156
+Name: Agricultural University, Kota
+URL: https://www.auk.ac.in
+Status: Error: fetch failed
+---
+ID: 158
+Name: Government Polytechnic College, Jaipur
+URL: https://gpcjaipur.ac.in
+Status: Error: fetch failed
+---
+ID: 159
+Name: Amity University Rajasthan
+URL: https://www.amity.edu/rajasthan
+Status: 404
+---
+ID: 161
+Name: Rajasthan Ayurved University
+URL: https://rau.rajasthan.gov.in
+Status: Error: fetch failed
+---
+ID: 162
+Name: Government College of Engineering, Bikaner
+URL: https://gcebikaner.ac.in
+Status: Error: fetch failed
+---
+ID: 165
+Name: National Institute of Technology (NIT) Bhopal
+URL: https://www.manit.ac.in
+Status: Error: fetch failed
+---
+ID: 168
+Name: Rani Durgavati Vishwavidyalaya
+URL: https://www.rdunijbpin.nic.in
+Status: Error: fetch failed
+---
+ID: 170
+Name: Devi Ahilya Vishwavidyalaya (DAVV)
+URL: https://www.dauniv.ac.in
+Status: Error: fetch failed
+---
+ID: 171
+Name: Maulana Azad National Institute of Technology (MANIT)
+URL: https://www.manit.ac.in
+Status: Error: fetch failed
+---
+ID: 172
+Name: Symbiosis Institute of Technology (SIT) Nagpur
+URL: https://sit.edu.in
+Status: Error: fetch failed
+---
+ID: 173
+Name: Government Agriculture College, Gwalior
+URL: https://rvskvv.ac.in
+Status: Error: fetch failed
+---
+ID: 174
+Name: Holkar Science College
+URL: https://holkarsciencecollege.ac.in
+Status: Error: fetch failed
+---
+ID: 175
+Name: Government Polytechnic, Bhopal
+URL: https://gpbhopal.ac.in
+Status: Error: fetch failed
+---
+ID: 181
+Name: Osmania Medical College
+URL: https://osmaniamedicalcollege.ac.in
+Status: Error: fetch failed
+---
+ID: 183
+Name: National Institute of Technology (NIT) Warangal
+URL: https://www.nitw.ac.in
+Status: Error: fetch failed
+---
+ID: 184
+Name: University College of Law, Osmania University
+URL: https://ouclaw.ac.in
+Status: Error: fetch failed
+---
+ID: 185
+Name: Hyderabad Agricultural University (PJTSAU)
+URL: https://pjtsau.edu.in
+Status: Error: fetch failed
+---
+ID: 186
+Name: Kakatiya Medical College
+URL: https://kmc.warangal.ac.in
+Status: Error: fetch failed
+---
+ID: 187
+Name: Government Medical College, Siddipet
+URL: https://gmcsiddipet.telangana.gov.in
+Status: Error: fetch failed
+---
+ID: 188
+Name: Institute of Hotel Management, Hyderabad
+URL: https://ihmhyd.ac.in
+Status: Error: fetch failed
+---
+ID: 192
+Name: GITAM University
+URL: https://www.gitam.edu
+Status: 403
+---
+ID: 194
+Name: Rangaraya Medical College
+URL: https://rmckakinada.ac.in
+Status: Error: fetch failed
+---
+ID: 196
+Name: Sri Venkateswara University
+URL: https://svuniversity.edu.in
+Status: Error: fetch failed
+---
+ID: 199
+Name: AU College of Law
+URL: https://andhrauniversity.edu.in/law
+Status: 404
+---
+ID: 200
+Name: Andhra Medical College
+URL: https://amcvizag.ac.in
+Status: Error: fetch failed
+---
+ID: 203
+Name: Patna Medical College & Hospital
+URL: https://pmchindia.com
+Status: Error: fetch failed
+---
+ID: 204
+Name: Patna University
+URL: https://patnauniversity.ac.in
+Status: Error: fetch failed
+---
+ID: 210
+Name: Gaya Medical College & Hospital
+URL: https://gmchgaya.in
+Status: Error: fetch failed
+---
+ID: 214
+Name: Government Medical College, Amritsar
+URL: https://gmcamritsar.ac.in
+Status: Error: fetch failed
+---
+ID: 219
+Name: Government College of Law, Chandigarh
+URL: https://gclaw.ac.in
+Status: Error: fetch failed
+---
+ID: 220
+Name: DAV College, Chandigarh
+URL: https://davchandigarh.com
+Status: Timeout
+---
+ID: 221
+Name: National Institute of Technology (NIT) Kurukshetra
+URL: https://nitkkr.ac.in
+Status: Error: fetch failed
+---
+ID: 222
+Name: Maharshi Dayanand University (MDU)
+URL: https://www.mdurohtak.ac.in
+Status: Error: fetch failed
+---
+ID: 223
+Name: Pandit B.D. Sharma PGIMS Rohtak
+URL: https://pgims.edu.in
+Status: Error: fetch failed
+---
+ID: 228
+Name: DCR University of Science & Technology
+URL: https://dcrust.ac.in
+Status: Error: fetch failed
+---
+ID: 233
+Name: Government Medical College, Shimla
+URL: https://igmcshimla.ac.in
+Status: Error: fetch failed
+---
+ID: 236
+Name: HP Institute of Hotel Management (HPIHM)
+URL: https://hpihm.ac.in
+Status: Error: fetch failed
+---
+ID: 240
+Name: Hemwati Nandan Bahuguna Garhwal University
+URL: https://www.hnbgu.ac.in
+Status: Timeout
+---
+ID: 245
+Name: Government Engineering College, Thrissur
+URL: https://gectcr.ac.in
+Status: Error: fetch failed
+---
+ID: 246
+Name: Cochin University of Science and Technology (CUSAT)
+URL: https://www.cusat.ac.in
+Status: Error: fetch failed
+---
+ID: 247
+Name: Kerala Agricultural University
+URL: https://kau.in
+Status: Error: fetch failed
+---
+ID: 249
+Name: Government Law College, Thiruvananthapuram
+URL: https://glct.ac.in
+Status: Error: fetch failed
+---
+ID: 250
+Name: Kerala Kalamandalam
+URL: https://kalamandalam.org
+Status: Error: fetch failed
+---
+ID: 253
+Name: Model Engineering College
+URL: https://www.mec.ac.in
+Status: Timeout
+---
+ID: 254
+Name: Kerala University of Health Sciences
+URL: https://kuhs.ac.in
+Status: Error: fetch failed
+---
+ID: 258
+Name: KIIT Deemed University
+URL: https://kiit.ac.in
+Status: 403
+---
+ID: 259
+Name: Utkal University
+URL: https://www.utkaluniversity.ac.in
+Status: Timeout
+---
+ID: 261
+Name: SCB Medical College, Cuttack
+URL: https://scbmckmc.co.in
+Status: Error: fetch failed
+---
+ID: 266
+Name: National Institute of Technology (NIT) Jamshedpur
+URL: https://www.nitjsr.ac.in
+Status: Timeout
+---
+ID: 270
+Name: Birsa Agricultural University
+URL: https://bauranchi.ac.in
+Status: Error: fetch failed
+---
+ID: 271
+Name: National Institute of Technology (NIT) Raipur
+URL: https://www.nitrr.ac.in
+Status: Error: fetch failed
+---
+ID: 273
+Name: Pt. Jawaharlal Nehru Memorial Medical College Raipur
+URL: https://jnmmc.ac.in
+Status: Error: fetch failed
+---
+ID: 274
+Name: Hemchand Yadav University
+URL: https://hyvdurg.ac.in
+Status: Error: fetch failed
+---
+ID: 275
+Name: Chhattisgarh Institute of Medical Sciences (CIMS)
+URL: https://cimsb.ac.in
+Status: Error: fetch failed
+---
+ID: 276
+Name: Indira Gandhi Agricultural University
+URL: https://igau.edu.in
+Status: Error: fetch failed
+---
+ID: 278
+Name: National Institute of Technology (NIT) Silchar
+URL: https://nits.ac.in
+Status: Error: fetch failed
+---
+ID: 280
+Name: Gauhati Medical College
+URL: https://gmchassam.ac.in
+Status: Error: fetch failed
+---
+ID: 281
+Name: Assam Agricultural University
+URL: https://aau.ac.in
+Status: Error: fetch failed
+---
+ID: 282
+Name: Assam University
+URL: https://www.aus.ac.in
+Status: Error: fetch failed
+---
+ID: 285
+Name: National Institute of Pharmaceutical Education and Research (NIPER), Guwahati
+URL: https://niperguwahati.in
+Status: Timeout
+---
+ID: 286
+Name: Goa Engineering College
+URL: https://www.gec.ac.in
+Status: Timeout
+---
+ID: 287
+Name: Goa University
+URL: https://www.unigoa.ac.in
+Status: Timeout
+---
+ID: 288
+Name: Goa Medical College
+URL: https://goamedicalcollege.ac.in
+Status: Error: fetch failed
+---
+ID: 289
+Name: Dhempe College of Arts & Science
+URL: https://dhempecollege.edu.in
+Status: Timeout
+---
+ID: 290
+Name: Fr. Agnel College of Arts & Commerce
+URL: https://fracc.edu.in
+Status: Error: fetch failed
+---
+ID: 291
+Name: Institute of Hotel Management, Goa
+URL: https://ihmgoa.ac.in
+Status: Error: fetch failed
+---
+ID: 292
+Name: Government College of Arts Science & Commerce, Khandola
+URL: https://gcasc.ac.in
+Status: Error: fetch failed
+---
+ID: 294
+Name: Government Engineering & Technical College, Dimapur
+URL: https://getcdimapur.ac.in
+Status: Error: fetch failed
+---
+ID: 295
+Name: CIHSR - Christian Institute of Health Sciences
+URL: https://cihsrdimapur.org
+Status: Error: fetch failed
+---
+ID: 298
+Name: RIMS Imphal (Regional Institute of Medical Sciences)
+URL: https://rimsimphal.in
+Status: Error: fetch failed
+---
+ID: 299
+Name: North-Eastern Hill University (NEHU)
+URL: https://www.nehu.ac.in
+Status: Error: fetch failed
+---
+ID: 302
+Name: Mizoram University
+URL: https://mzu.edu.in
+Status: Error: fetch failed
+---
+ID: 312
+Name: Government College of Commerce & Business Administration
+URL: https://gccba.ac.in
+Status: Error: fetch failed
+---
+ID: 314
+Name: Jawaharlal Institute of Postgraduate Medical Education & Research (JIPMER)
+URL: https://jipmer.edu.in
+Status: Error: fetch failed
+---
+ID: 318
+Name: Government Medical College, Srinagar
+URL: https://gmcsk.ac.in
+Status: Error: fetch failed
+---
+ID: 320
+Name: University of Ladakh
+URL: https://universityofladakh.ac.in
+Status: Error: fetch failed
+---
+ID: 321
+Name: Jawaharlal Nehru Rajkeeya Mahavidyalaya (JNRM)
+URL: https://jnrm.ac.in
+Status: Error: fetch failed
+---
+ID: 322
+Name: Dr. Ambedkar College, Port Blair
+URL: https://ambedkarcollege.and.nic.in
+Status: Error: fetch failed
+---
+ID: 323
+Name: Government Medical College, Silvassa
+URL: https://gmcsilvassa.dnhdd.gov.in
+Status: Error: fetch failed
+---
+ID: 324
+Name: Government Polytechnic, Daman
+URL: https://gptdaman.ac.in
+Status: Error: fetch failed
+---
+ID: 325
+Name: Lakshadweep College of Arts & Science
+URL: https://lcas.ac.in
+Status: Error: fetch failed
+---
+ID: 327
+Name: Government Medical College, Jammu
+URL: https://gmcjammu.ac.in
+Status: Error: fetch failed
+---
+ID: 329
+Name: Hemwati Nandan Bahuguna (HNB) Garhwal University - Srinagar
+URL: https://www.hnbgu.ac.in
+Status: Timeout
+---
+ID: 330
+Name: College of Engineering Trivandrum (CET)
+URL: https://cetriyanam.ac.in
+Status: Error: fetch failed
+---
+ID: 332
+Name: Osmania University
+URL: https://www.osmania.ac.in
+Status: Error: fetch failed
+---
+ID: 334
+Name: Jaipur National University
+URL: https://jnujaipur.ac.in
+Status: 403
+---
+ID: 339
+Name: Bharathidasan University
+URL: https://www.bdu.ac.in
+Status: Error: fetch failed
+---
+ID: 340
+Name: Mahatma Gandhi University
+URL: https://www.mgu.ac.in
+Status: Error: fetch failed
+---
+ID: 342
+Name: Berhampur University
+URL: https://buodisha.edu.in
+Status: Error: fetch failed
+---
+ID: 344
+Name: Goa College of Art
+URL: https://gcagoaart.ac.in
+Status: Error: fetch failed
+---
+ID: 345
+Name: Jamshedpur Workers' College
+URL: https://jwcjamshedpur.ac.in
+Status: Error: fetch failed
+---
+ID: 347
+Name: Government College of Arts & Commerce, Dharamshala
+URL: https://gcad.ac.in
+Status: Error: fetch failed
+---
+ID: 348
+Name: Sridev Suman Uttarakhand University
+URL: https://ssuu.ac.in
+Status: Error: fetch failed
+---
+ID: 350
+Name: Tripura Medical College & Dr. BRAM Teaching Hospital
+URL: https://tmcagartala.ac.in
+Status: Error: fetch failed
+---
+ID: 351
+Name: Sikkim Government College, Tadong
+URL: https://sgctadong.edu.in
+Status: Error: fetch failed
+---
+ID: 352
+Name: IIT Gandhinagar
+URL: https://iitgn.ac.in
+Status: 403
+---
+ID: 354
+Name: IIM Shillong
+URL: https://www.iimshillong.in
+Status: Timeout
+---
+ID: 357
+Name: IIT Jodhpur
+URL: https://iitj.ac.in
+Status: 403
+---
+ID: 361
+Name: NIT Nagaland
+URL: https://nitnagaland.ac.in
+Status: Error: fetch failed
+---
+ID: 368
+Name: Institute of Hotel Management, Bangalore
+URL: https://ihmblr.com
+Status: Error: fetch failed
+---
+ID: 369
+Name: Institute of Hotel Management, Mumbai
+URL: https://ihmm.ac.in
+Status: Error: fetch failed
+---
+ID: 376
+Name: Symbiosis Law School, Pune
+URL: https://slsp.edu.in
+Status: Error: fetch failed
+---
+ID: 378
+Name: Army College of Medical Sciences, Delhi
+URL: https://acmsdelhi.org
+Status: Error: fetch failed
+---
+ID: 380
+Name: Jawaharlal Nehru Medical College, AMU
+URL: https://jnmc.com
+Status: Error: fetch failed
+---
+ID: 381
+Name: Institute of Medical Sciences, BHU
+URL: https://imsb.bhu.ac.in
+Status: Error: fetch failed
+---
+ID: 382
+Name: Armed Forces Medical College (AFMC) Pune
+URL: https://www.afmc.nic.in
+Status: Error: fetch failed
+---
+ID: 383
+Name: Government Dental College, Mumbai
+URL: https://gdchospitalmumbai.com
+Status: Error: fetch failed
+---
+ID: 384
+Name: Sri Aurobindo Institute of Medical Sciences (SAIMS)
+URL: https://www.saims.edu.in
+Status: Error: fetch failed
+---
+ID: 386
+Name: Academy of Architecture, Mumbai
+URL: https://www.aoarch.com
+Status: Error: fetch failed
+---
+ID: 390
+Name: NID Jorhat
+URL: https://nidjorhat.ac.in
+Status: Error: fetch failed
+---
+ID: 392
+Name: National Law University, Cuttack
+URL: https://www.nluo.ac.in
+Status: Timeout
+---
+ID: 395
+Name: College of Veterinary Science, Hyderabad
+URL: https://pvnrtvvu.ac.in
+Status: Error: fetch failed
+---

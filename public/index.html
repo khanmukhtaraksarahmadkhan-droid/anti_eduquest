@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduQuest | Indian Education Search Portal</title>
+  <meta name="description" content="Search and discover the best colleges and institutions across India. Filter by stream, state, institution type, NAAC grade, and more.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Header & Navbar -->
+  <header id="main-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo-container" id="nav-logo">
+          <div class="logo-icon">Q</div>
+          <span class="logo-text">EduQuest</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" id="link-home">Home</a></li>
+          <li><a href="#colleges" id="link-colleges">Colleges</a></li>
+          <li><a href="#courses" id="id-link-courses">Courses</a></li>
+          <li><a href="#states" id="link-states">States</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Search bar -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-heading" id="main-title">Find Your <span>Dream College</span></h1>
+      <p class="hero-subheading" id="main-subtitle">Search and compare from India's best colleges across Engineering, Medical, Law, Commerce, Arts, Agriculture, and every stream — all states covered.</p>
+      
+      <!-- Live Search Box -->
+      <div class="search-container">
+        <div class="search-box">
+          <div class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <input type="text" id="search-input" class="search-input" placeholder="Search college, city, state, course, stream (e.g. MBBS, MBA, NIT, Pune, Law)..." autocomplete="off">
+          <button type="button" id="search-btn" class="search-btn">
+            <span>Search</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+        <!-- Live Suggestions dropdown -->
+        <div id="suggestions-box" class="search-suggestions"></div>
+      </div>
+
+      <!-- Advanced Filters Panel -->
+      <div class="filters-panel" id="filters-panel">
+        <div class="filters-toggle-row">
+          <button class="filters-toggle-btn" id="filters-toggle-btn" type="button" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
+            <span id="filters-toggle-label">Advanced Filters</span>
+          </button>
+          <button class="filters-reset-btn" id="filters-reset-btn" type="button" style="display:none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            Reset Filters
+          </button>
+        </div>
+
+        <div class="filters-grid" id="filters-grid" style="display:none;">
+          <!-- Institution Type -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-type">Institution Type</label>
+            <select id="filter-type" class="filter-select">
+              <option value="">All Types</option>
+            </select>
+          </div>
+
+          <!-- Stream -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-stream">Stream / Course</label>
+            <select id="filter-stream" class="filter-select">
+              <option value="">All Streams</option>
+            </select>
+          </div>
+
+          <!-- State -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-state">State / UT</label>
+            <select id="filter-state" class="filter-select">
+              <option value="">All States</option>
+            </select>
+          </div>
+
+          <!-- Ownership -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-ownership">Ownership</label>
+            <select id="filter-ownership" class="filter-select">
+              <option value="">Any Ownership</option>
+              <option value="Government">Government</option>
+              <option value="Private">Private</option>
+              <option value="Aided">Aided</option>
+            </select>
+          </div>
+
+          <!-- NAAC Grade -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-naac">NAAC Grade</label>
+            <select id="filter-naac" class="filter-select">
+              <option value="">Any Grade</option>
+              <option value="A++">A++</option>
+              <option value="A+">A+</option>
+              <option value="A">A</option>
+              <option value="B++">B++</option>
+              <option value="B+">B+</option>
+              <option value="B">B</option>
+            </select>
+          </div>
+
+          <!-- Approval -->
+          <div class="filter-group">
+            <label class="filter-label" for="filter-approval">Approved By</label>
+            <select id="filter-approval" class="filter-select">
+              <option value="">Any Approval</option>
+              <option value="AICTE">AICTE</option>
+              <option value="NMC">NMC (Medical)</option>
+              <option value="BCI">BCI (Law)</option>
+              <option value="PCI">PCI (Pharmacy)</option>
+              <option value="INC">INC (Nursing)</option>
+              <option value="COA">COA (Architecture)</option>
+              <option value="ICAR">ICAR (Agriculture)</option>
+              <option value="DCI">DCI (Dental)</option>
+              <option value="NCHMCT">NCHMCT (Hotel Mgmt)</option>
+              <option value="UGC">UGC</option>
+              <option value="NAAC">NAAC</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Statistics Cards -->
+      <div class="stats-grid" id="stats-dashboard">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-colleges">-</div>
+          <div class="stat-label">Institutions Across India</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-courses">-</div>
+          <div class="stat-label">Courses &amp; Streams</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-states">-</div>
+          <div class="stat-label">States &amp; UTs Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Results Section (Shown dynamically when search query is active) -->
+  <section class="section-block" id="search-results-section" style="display: none;">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" id="search-results-title">Search <span>Results</span></h2>
+          <p class="section-desc" id="search-results-subtitle">Found <span id="search-count" style="color: var(--secondary); font-weight: bold;">0</span> matching institutions</p>
+        </div>
+        <a href="index.html" class="section-link" id="clear-search-btn">
+          <span>Clear Search</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </a>
+      </div>
+      <!-- Loader Spinner -->
+      <div id="search-loader" class="loader-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p class="loading-text">Searching institutions...</p>
+      </div>
+      <div class="colleges-grid" id="search-results-grid">
+        <!-- Rendered search cards will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Colleges Section -->
+  <section class="section-block" id="colleges">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" id="featured-title">Featured <span>Institutions</span></h2>
+          <p class="section-desc">Handpicked top institutions with national rankings and academic excellence across all streams.</p>
+        </div>
+      </div>
+      <!-- Loader Spinner -->
+      <div id="colleges-loader" class="loader-spinner">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading featured institutions...</p>
+      </div>
+      <div class="colleges-grid" id="featured-colleges-grid">
+        <!-- Rendered college cards will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Courses Section -->
+  <section class="section-block" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" id="courses-title">Explore <span>Courses</span></h2>
+          <p class="section-desc">Browse courses across Engineering, Medical, Law, Commerce, Agriculture, Arts, and every major Indian stream.</p>
+        </div>
+      </div>
+      <!-- Loader Spinner -->
+      <div id="courses-loader" class="loader-spinner">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading courses...</p>
+      </div>
+      <div class="courses-grid" id="courses-list-grid">
+        <!-- Course badges loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore States Section -->
+  <section class="section-block" id="states">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" id="states-title">Explore by <span>States</span></h2>
+          <p class="section-desc">Find top colleges and institutions in every state and union territory across India.</p>
+        </div>
+      </div>
+      <!-- Loader Spinner -->
+      <div id="states-loader" class="loader-spinner">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading states data...</p>
+      </div>
+      <div class="states-grid" id="states-list-grid">
+        <!-- Dynamic state cards will load here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-column footer-brand-column">
+          <div class="footer-brand-title">EduQuest</div>
+          <p class="footer-brand-desc">India's comprehensive portal to search and compare colleges across Engineering, Medical, Law, Commerce, Arts, Agriculture, and every major stream — covering all states and union territories.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#colleges">Institutions</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#states">States</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Popular Streams</h4>
+          <ul>
+            <li><a href="#" onclick="filterByStream('Engineering')">Engineering</a></li>
+            <li><a href="#" onclick="filterByStream('Medical')">Medical / MBBS</a></li>
+            <li><a href="#" onclick="filterByStream('Management')">MBA / Management</a></li>
+            <li><a href="#" onclick="filterByStream('Law')">Law / LLB</a></li>
+            <li><a href="#" onclick="filterByStream('Commerce')">Commerce / B.Com</a></li>
+            <li><a href="#" onclick="filterByStream('Agriculture')">Agriculture</a></li>
+            <li><a href="#" onclick="filterByStream('Arts')">Arts / Humanities</a></li>
+            <li><a href="#" onclick="filterByStream('Architecture')">Architecture</a></li>
+            <li><a href="#" onclick="filterByStream('Pharmacy')">Pharmacy</a></li>
+            <li><a href="#" onclick="filterByStream('Design')">Design / Fine Arts</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 EduQuest. Built with raw JavaScript and Node.js. All rights reserved.</div>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Twitter">Twitter</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="GitHub">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-wrapper" class="notification-container"></div>
+
+  <!-- Client JavaScript Logic -->
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
