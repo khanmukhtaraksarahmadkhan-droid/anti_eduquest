@@ -32,110 +32,123 @@
 
   <!-- Hero Section with Search bar -->
   <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <span class="eyebrow">EduQuest</span>
+        <h1 class="hero-heading" id="main-title">Find the Right College for Your <span>Bright Future</span></h1>
+        <p class="hero-subheading" id="main-subtitle">Explore top colleges across India. Compare courses, fees, placements and more.</p>
+
+        <div class="hero-actions">
+          <a href="#colleges" class="btn btn-primary">Explore Colleges</a>
+          <a href="#courses" class="btn btn-secondary">Search Courses</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-card">
+            <div class="highlight-number" id="hero-colleges-count">-</div>
+            <div class="highlight-label">Colleges Across India</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number" id="hero-courses-count">-</div>
+            <div class="highlight-label">Popular Courses</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number" id="hero-states-count">-</div>
+            <div class="highlight-label">States &amp; UTs Covered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-feature-card">
+          <div class="hero-feature-card-header">
+            <div>
+              <span class="feature-label">College Spotlight</span>
+              <div class="feature-title">Discover top colleges with high placement records and modern campuses.</div>
+            </div>
+            <span class="feature-pill">Top Rated</span>
+          </div>
+
+          <div class="hero-feature-image">
+            <div class="hero-image-badge" id="hero-feature-badge">- Colleges</div>
+            <div class="hero-image-copy">Search, compare and shortlist campuses across India in one place.</div>
+          </div>
+
+          <div class="hero-feature-footer">
+            <div class="stat-pill">
+              <span>Engineering</span>
+              <strong>Top Ranked</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Average Package</span>
+              <strong>₹2.4 LPA</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container search-panel-section">
+      <div class="search-panel-grid">
+        <div class="search-panel">
+          <div class="search-panel-header">
+            <span class="panel-label">Search Colleges</span>
+            <h2 class="panel-title">Find your best match</h2>
+            <p class="panel-desc">Search by institution, state, course, stream and compare top colleges instantly.</p>
+          </div>
+
+          <div class="search-box">
+            <div class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <input type="text" id="search-input" class="search-input" placeholder="Search college, city, state, course, stream..." autocomplete="off">
+            <button type="button" id="search-btn" class="search-btn">
+              <span>Search</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+          <div id="suggestions-box" class="suggestions-box"></div>
+          <div class="forms-row">
+            <div class="form-item">
+              <label for="search-state">Select State</label>
+              <select id="search-state" class="search-field">
+                <option value="">All States</option>
+                <option>Delhi</option>
+                <option>Maharashtra</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="search-course">Select Course</label>
+              <select id="search-course" class="search-field">
+                <option value="">All Courses</option>
+                <option>Engineering</option>
+                <option>Medical</option>
+                <option>Law</option>
+                <option>Management</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <aside class="top-colleges-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Top Colleges</span>
+              <h3>Top Institutions</h3>
+            </div>
+            <a href="#colleges" class="small-link">View All</a>
+          </div>
+
+          <div class="top-college-list" id="top-college-list">
+            <!-- Top colleges are populated from database records -->
+          </div>
+        </aside>
+      </div>
+    </div>
+
     <div class="container">
-      <h1 class="hero-heading" id="main-title">Find Your <span>Dream College</span></h1>
-      <p class="hero-subheading" id="main-subtitle">Search and compare from India's best colleges across Engineering, Medical, Law, Commerce, Arts, Agriculture, and every stream — all states covered.</p>
-      
-      <!-- Live Search Box -->
-      <div class="search-container">
-        <div class="search-box">
-          <div class="search-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </div>
-          <input type="text" id="search-input" class="search-input" placeholder="Search college, city, state, course, stream (e.g. MBBS, MBA, NIT, Pune, Law)..." autocomplete="off">
-          <button type="button" id="search-btn" class="search-btn">
-            <span>Search</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
-        </div>
-        <!-- Live Suggestions dropdown -->
-        <div id="suggestions-box" class="search-suggestions"></div>
-      </div>
-
-      <!-- Advanced Filters Panel -->
-      <div class="filters-panel" id="filters-panel">
-        <div class="filters-toggle-row">
-          <button class="filters-toggle-btn" id="filters-toggle-btn" type="button" aria-expanded="false">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="10" y1="18" x2="14" y2="18"></line></svg>
-            <span id="filters-toggle-label">Advanced Filters</span>
-          </button>
-          <button class="filters-reset-btn" id="filters-reset-btn" type="button" style="display:none;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            Reset Filters
-          </button>
-        </div>
-
-        <div class="filters-grid" id="filters-grid" style="display:none;">
-          <!-- Institution Type -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-type">Institution Type</label>
-            <select id="filter-type" class="filter-select">
-              <option value="">All Types</option>
-            </select>
-          </div>
-
-          <!-- Stream -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-stream">Stream / Course</label>
-            <select id="filter-stream" class="filter-select">
-              <option value="">All Streams</option>
-            </select>
-          </div>
-
-          <!-- State -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-state">State / UT</label>
-            <select id="filter-state" class="filter-select">
-              <option value="">All States</option>
-            </select>
-          </div>
-
-          <!-- Ownership -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-ownership">Ownership</label>
-            <select id="filter-ownership" class="filter-select">
-              <option value="">Any Ownership</option>
-              <option value="Government">Government</option>
-              <option value="Private">Private</option>
-              <option value="Aided">Aided</option>
-            </select>
-          </div>
-
-          <!-- NAAC Grade -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-naac">NAAC Grade</label>
-            <select id="filter-naac" class="filter-select">
-              <option value="">Any Grade</option>
-              <option value="A++">A++</option>
-              <option value="A+">A+</option>
-              <option value="A">A</option>
-              <option value="B++">B++</option>
-              <option value="B+">B+</option>
-              <option value="B">B</option>
-            </select>
-          </div>
-
-          <!-- Approval -->
-          <div class="filter-group">
-            <label class="filter-label" for="filter-approval">Approved By</label>
-            <select id="filter-approval" class="filter-select">
-              <option value="">Any Approval</option>
-              <option value="AICTE">AICTE</option>
-              <option value="NMC">NMC (Medical)</option>
-              <option value="BCI">BCI (Law)</option>
-              <option value="PCI">PCI (Pharmacy)</option>
-              <option value="INC">INC (Nursing)</option>
-              <option value="COA">COA (Architecture)</option>
-              <option value="ICAR">ICAR (Agriculture)</option>
-              <option value="DCI">DCI (Dental)</option>
-              <option value="NCHMCT">NCHMCT (Hotel Mgmt)</option>
-              <option value="UGC">UGC</option>
-              <option value="NAAC">NAAC</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
       <!-- Quick Metrics Statistics Cards -->
       <div class="stats-grid" id="stats-dashboard">
         <div class="stat-card">

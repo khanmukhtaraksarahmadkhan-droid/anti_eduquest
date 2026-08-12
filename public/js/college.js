@@ -219,29 +219,49 @@
       }
       elPhone.textContent = college.phone || 'N/A';
       elEmail.textContent = college.email || 'N/A';
-      elWebsite.textContent = college.website
-        ? college.website.replace(/^https?:\/\/(www\.)?/, '')
-        : 'Visit Site';
-      elWebsite.href = college.website || '#';
+
+      let name = (college.college_name || '').trim();
+      let rawWeb = college.website ? college.website.trim() : '';
+
+      // Explicit override for Vidyalankar Polytechnic Wadala
+      if (name.toLowerCase().includes('vidyalankar polytechnic') && (rawWeb.includes('vpmthane') || !rawWeb || rawWeb === 'N/A')) {
+        rawWeb = 'https://vpt.edu.in';
+      }
+
+      let targetUrl = '#';
+      let isFallback = false;
+
+      if (rawWeb && rawWeb !== 'N/A' && rawWeb !== '#' && rawWeb !== 'undefined' && rawWeb !== 'null') {
+        targetUrl = /^https?:\/\//i.test(rawWeb) ? rawWeb : `https://${rawWeb}`;
+      } else {
+        targetUrl = `https://www.google.com/search?q=${encodeURIComponent(name + ' official website')}`;
+        isFallback = true;
+      }
+
+      elWebsite.textContent = (!isFallback && rawWeb)
+        ? rawWeb.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+        : 'Official Portal (Search)';
+      elWebsite.href = targetUrl;
+      elWebsite.target = '_blank';
+      elWebsite.rel = 'noopener noreferrer';
+      elWebsite.title = isFallback ? `Search for ${name} official website` : `Visit ${name} official website`;
 
       // 6. Courses table
       if (college.courses && college.courses.length > 0) {
         coursesTbody.innerHTML = college.courses.map(course => {
-          const streamColor = '#6366f1';
           return `
             <tr>
               <td><strong>${course.course_name}</strong></td>
               <td><span class="stream-pill it">${course.stream}</span></td>
               <td><span class="duration-value">${course.duration}</span></td>
-              <td><span class="fee-value">${formatRupees(course.fees)}</span> <span style="font-size: 0.8rem; color: var(--text-muted);">/ Year</span></td>
-              <td>${course.eligibility}</td>
+              <td><span class="fee-value">~${formatRupees(course.fees)}</span> <span style="font-size: 0.8rem; color: var(--text-muted);">/ Year</span></td>
             </tr>
           `;
         }).join('');
       } else {
         coursesTbody.innerHTML = `
           <tr>
-            <td colspan="5" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+            <td colspan="4" style="text-align: center; padding: 2rem; color: var(--text-muted);">
               No course information available at this time.
             </td>
           </tr>

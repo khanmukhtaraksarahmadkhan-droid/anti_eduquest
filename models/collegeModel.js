@@ -1,10 +1,35 @@
 const db = require('../config/db');
 
+// Utility to sanitize and fix college records (e.g. website URLs)
+function sanitizeCollege(college) {
+  if (!college) return college;
+
+  let name = (college.college_name || '').trim();
+  let rawWeb = (college.website || '').trim();
+
+  // Explicit override for Vidyalankar Polytechnic Wadala
+  if (name.toLowerCase().includes('vidyalankar polytechnic')) {
+    if (!rawWeb || rawWeb.includes('vpmthane') || rawWeb === 'N/A' || rawWeb === '#') {
+      college.website = 'https://vpt.edu.in';
+      return college;
+    }
+  }
+
+  // Ensure clean website URL format
+  if (rawWeb && rawWeb !== 'N/A' && rawWeb !== '#' && rawWeb !== 'undefined' && rawWeb !== 'null') {
+    college.website = /^https?:\/\//i.test(rawWeb) ? rawWeb : `https://${rawWeb}`;
+  } else {
+    college.website = null;
+  }
+
+  return college;
+}
+
 const College = {
   // Get all colleges (basic listing, ordered by name)
   getAll: async () => {
     const [rows] = await db.query('SELECT * FROM colleges ORDER BY college_name');
-    return rows;
+    return rows.map(sanitizeCollege);
   },
 
   // Get single college details with courses offered
@@ -12,7 +37,7 @@ const College = {
     const [colleges] = await db.query('SELECT * FROM colleges WHERE id = ?', [id]);
     if (colleges.length === 0) return null;
 
-    const college = colleges[0];
+    const college = sanitizeCollege(colleges[0]);
 
     // Fetch courses mapped to this college along with fees
     const [courses] = await db.query(`
@@ -110,7 +135,7 @@ const College = {
       LIMIT 200
     `, values);
 
-    return rows;
+    return rows.map(sanitizeCollege);
   },
 
   // Get list of distinct states

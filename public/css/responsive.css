@@ -7,6 +7,12 @@
   }
 
   /* Hero Section */
+  .hero-grid,
+  .search-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .hero-heading {
     font-size: 2.8rem;
   }

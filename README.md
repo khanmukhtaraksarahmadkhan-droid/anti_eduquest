@@ -108,3 +108,26 @@ Local web portal URL: http://localhost:3000
 ### 6. Visit the Portal
 Open your web browser and navigate to:
 [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Deploying to Vercel
+
+This repository is fully configured for Vercel deployment using Vercel Serverless Functions (`@vercel/node`).
+
+### Prerequisites
+1. **Cloud MySQL Database**: Host your MySQL database on a cloud database service (e.g., Aiven, TiDB Cloud, Railway, PlanetScale, or Clever Cloud) and import `database/eduquest.sql`.
+
+### Deployment Steps
+1. Push your repository to GitHub / GitLab.
+2. Go to [Vercel](https://vercel.com) and click **Add New Project**.
+3. Import this repository.
+4. Set the following **Environment Variables** in Vercel project settings:
+   - `DB_HOST`: *(Your Cloud MySQL Host)*
+   - `DB_USER`: *(Your Cloud MySQL Username)*
+   - `DB_PASSWORD`: *(Your Cloud MySQL Password)*
+   - `DB_NAME`: `eduquest`
+   - `DB_PORT`: `3306` (or host port)
+   - `DB_SSL`: `true` (if required by your cloud provider)
+5. Click **Deploy**.
+

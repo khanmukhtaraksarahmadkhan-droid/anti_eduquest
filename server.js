@@ -43,22 +43,26 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Bind port and start Express server
-const server = app.listen(PORT, () => {
-  console.log(`==================================================`);
-  console.log(`EduQuest Server is active on Port: ${PORT}`);
-  console.log(`Local web portal URL: http://localhost:${PORT}`);
-  console.log(`==================================================`);
-});
+// Export Express app for Vercel serverless functions
+module.exports = app;
 
-server.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`\n✗ Port ${PORT} is already in use.`);
-    console.error(`  Run this command to free it, then try again:`);
-    console.error(`  netstat -ano | findstr :${PORT}  →  taskkill /PID <PID> /F\n`);
-    process.exit(1);
-  } else {
-    throw err;
-  }
-});
+// Bind port and start Express server only when running standalone (not on Vercel)
+if (process.env.VERCEL !== '1') {
+  const server = app.listen(PORT, () => {
+    console.log(`==================================================`);
+    console.log(`EduQuest Server is active on Port: ${PORT}`);
+    console.log(`Local web portal URL: http://localhost:${PORT}`);
+    console.log(`==================================================`);
+  });
 
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n✗ Port ${PORT} is already in use.`);
+      console.error(`  Run this command to free it, then try again:`);
+      console.error(`  netstat -ano | findstr :${PORT}  →  taskkill /PID <PID> /F\n`);
+      process.exit(1);
+    } else {
+      throw err;
+    }
+  });
+}

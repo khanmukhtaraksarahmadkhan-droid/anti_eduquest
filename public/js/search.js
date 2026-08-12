@@ -8,6 +8,8 @@
   const searchCount          = document.getElementById('search-count');
   const searchLoader         = document.getElementById('search-loader');
   const clearSearchBtn       = document.getElementById('clear-search-btn');
+  const topStateSelect       = document.getElementById('search-state');
+  const topCourseSelect      = document.getElementById('search-course');
   
   // Normal landing sections to hide/show
   const collegesSection = document.getElementById('colleges');
@@ -20,13 +22,9 @@
 
   // Collect current filter values
   function getFilterParams() {
-    const type      = document.getElementById('filter-type')      ? document.getElementById('filter-type').value      : '';
-    const stream    = document.getElementById('filter-stream')    ? document.getElementById('filter-stream').value    : '';
-    const state     = document.getElementById('filter-state')     ? document.getElementById('filter-state').value     : '';
-    const ownership = document.getElementById('filter-ownership') ? document.getElementById('filter-ownership').value : '';
-    const naac      = document.getElementById('filter-naac')      ? document.getElementById('filter-naac').value      : '';
-    const approval  = document.getElementById('filter-approval')  ? document.getElementById('filter-approval').value  : '';
-    return { type, stream, state, ownership, naac, approval };
+    const state  = topStateSelect ? topStateSelect.value : '';
+    const stream = topCourseSelect ? topCourseSelect.value : '';
+    return { stream, state };
   }
 
   // Build query string from search + filter params
@@ -72,8 +70,8 @@
     }
   });
 
-  // Trigger search when filter dropdowns change
-  const filterIds = ['filter-type','filter-stream','filter-state','filter-ownership','filter-naac','filter-approval'];
+  // Trigger search when the top-row selects change
+  const filterIds = ['search-state','search-course'];
   filterIds.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -98,13 +96,16 @@
       searchInput.value = '';
       hideSuggestions();
       
-      // Reset filters
+      // Reset top-row selects
       filterIds.forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.value = '';
+        if (el) {
+          el.value = '';
+          if (id === 'search-state' || id === 'search-course') {
+            el.dispatchEvent(new Event('change'));
+          }
+        }
       });
-      const resetBtn = document.getElementById('filters-reset-btn');
-      if (resetBtn) resetBtn.style.display = 'none';
       
       // Toggle visibility
       searchResultsSection.style.display = 'none';
@@ -120,7 +121,13 @@
   // Fetch match recommendations from server
   async function fetchSuggestions(query) {
     try {
-      const url = `/api/search?q=${encodeURIComponent(query)}`;
+      const params = new URLSearchParams();
+    if (query) params.set('q', query);
+    const topState = topStateSelect ? topStateSelect.value : '';
+    if (topState) params.set('state', topState);
+    const topCourse = topCourseSelect ? topCourseSelect.value : '';
+    if (topCourse) params.set('stream', topCourse);
+    const url = `/api/search?${params.toString()}`;
       const res = await fetch(url);
       if (!res.ok) throw new Error('Search failed');
       const matches = await res.json();
@@ -132,6 +139,7 @@
 
   // Render suggestion entries
   function renderSuggestions(matches, query) {
+    if (!suggestionsBox) return;
     if (matches.length === 0) {
       hideSuggestions();
       return;
@@ -171,6 +179,7 @@
   }
 
   function hideSuggestions() {
+    if (!suggestionsBox) return;
     suggestionsBox.classList.remove('active');
     suggestionsBox.innerHTML = '';
   }

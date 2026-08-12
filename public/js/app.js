@@ -91,6 +91,21 @@ function renderCollegeCard(college) {
   const typeLabel = college.institution_type || college.college_type || 'Institution';
   const ownershipLabel = college.ownership || college.college_type || '';
 
+  let name = (college.college_name || '').trim();
+  let rawWeb = college.website ? college.website.trim() : '';
+
+  // Vidyalankar Polytechnic explicit guard
+  if (name.toLowerCase().includes('vidyalankar polytechnic') && (rawWeb.includes('vpmthane') || !rawWeb || rawWeb === 'N/A')) {
+    rawWeb = 'https://vpt.edu.in';
+  }
+
+  let websiteUrl = '#';
+  if (rawWeb && rawWeb !== 'N/A' && rawWeb !== '#' && rawWeb !== 'undefined' && rawWeb !== 'null') {
+    websiteUrl = /^https?:\/\//i.test(rawWeb) ? rawWeb : `https://${rawWeb}`;
+  } else {
+    websiteUrl = `https://www.google.com/search?q=${encodeURIComponent(name + ' official website')}`;
+  }
+
   return `
     <article class="college-card">
       <div class="card-header">
@@ -114,7 +129,7 @@ function renderCollegeCard(college) {
         </div>
       </div>
       <div class="card-footer">
-        <a href="${college.website || '#'}" target="_blank" rel="noopener noreferrer" class="college-website-link">
+        <a href="${websiteUrl}" target="_blank" rel="noopener noreferrer" class="college-website-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
           Visit Site
         </a>
@@ -149,6 +164,12 @@ function animateCountUp(element, target, duration = 1500) {
   }, Math.max(stepTime, 15));
 }
 
+function formatStatValue(key, value) {
+  if (key === 'colleges' && value >= 300) return '300+';
+  if (key === 'courses'  && value >= 60)  return '60+';
+  return `${value}`;
+}
+
 // Fetch dashboard statistical metrics
 async function loadStats() {
   const statColleges = document.getElementById('stat-colleges');
@@ -162,14 +183,48 @@ async function loadStats() {
     if (!res.ok) throw new Error('Stats retrieval failed');
     const data = await res.json();
     
-    animateCountUp(statColleges, data.colleges);
-    animateCountUp(statCourses, data.courses);
-    animateCountUp(statStates, data.states);
+    const collegesText = formatStatValue('colleges', data.colleges);
+    const coursesText  = formatStatValue('courses', data.courses);
+    const statesText   = formatStatValue('states', data.states);
+
+    if (collegesText === `${data.colleges}`) {
+      animateCountUp(statColleges, data.colleges);
+    } else {
+      statColleges.textContent = collegesText;
+    }
+
+    if (coursesText === `${data.courses}`) {
+      animateCountUp(statCourses, data.courses);
+    } else {
+      statCourses.textContent = coursesText;
+    }
+
+    if (statesText === `${data.states}`) {
+      animateCountUp(statStates, data.states);
+    } else {
+      statStates.textContent = statesText;
+    }
+
+    setHeroMetrics(data);
   } catch (error) {
     console.error('Stats load error:', error);
-    statColleges.textContent = '400+';
-    statCourses.textContent  = '90+';
-    statStates.textContent   = '35+';
+    statColleges.textContent = '0';
+    statCourses.textContent  = '0';
+    statStates.textContent   = '0';
+  }
+}
+
+function setHeroMetrics(stats) {
+  const heroColleges = document.getElementById('hero-colleges-count');
+  const heroCourses  = document.getElementById('hero-courses-count');
+  const heroStates   = document.getElementById('hero-states-count');
+  const heroBadge    = document.getElementById('hero-feature-badge');
+
+  if (heroColleges) heroColleges.textContent = formatStatValue('colleges', stats.colleges);
+  if (heroCourses) heroCourses.textContent  = formatStatValue('courses', stats.courses);
+  if (heroStates) heroStates.textContent   = formatStatValue('states', stats.states);
+  if (heroBadge) {
+    heroBadge.textContent = stats.colleges >= 300 ? '300+ Colleges' : `${stats.colleges} Colleges`;
   }
 }
 
@@ -268,6 +323,7 @@ async function loadFeaturedColleges() {
     
     if (loader) loader.style.display = 'none';
     grid.innerHTML = featured.map(col => renderCollegeCard(col)).join('');
+    renderTopColleges(colleges);
   } catch (error) {
     console.error('Featured colleges load error:', error);
     if (loader) loader.style.display = 'none';
@@ -277,6 +333,7 @@ async function loadFeaturedColleges() {
         <p class="no-results-desc">Could not connect to the server database. Please ensure the backend is running.</p>
       </div>
     `;
+    renderTopColleges([]);
     showToast('Failed to load featured institutions. Check connection.');
   }
 }
@@ -350,6 +407,30 @@ async function loadStatesList() {
     if (loader) loader.style.display = 'none';
     grid.innerHTML = `<p class="loading-text">Unable to load states catalog.</p>`;
   }
+}
+
+function renderTopColleges(colleges) {
+  const list = document.getElementById('top-college-list');
+  if (!list) return;
+  if (!Array.isArray(colleges) || colleges.length === 0) {
+    list.innerHTML = `<div class="no-results-panel"><div class="no-results-title">No top institutions available</div></div>`;
+    return;
+  }
+
+  list.innerHTML = colleges.slice(0, 3).map(college => {
+    const initials = (college.logo || college.college_name).split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase();
+    return `
+      <article class="top-college-item">
+        <div class="top-college-media">${initials}</div>
+        <div class="top-college-info">
+          <div class="top-college-name">${college.college_name}</div>
+          <div class="top-college-meta">${college.city}, ${college.state}</div>
+          <div class="top-college-stats"><span>${college.naac_grade || 'N/A'}</span><span>${college.ownership || 'Unknown'}</span></div>
+        </div>
+        <a href="college.html?id=${college.id}" class="btn btn-secondary btn-sm">View Details</a>
+      </article>
+    `;
+  }).join('');
 }
 
 // Expose trigger search by term
