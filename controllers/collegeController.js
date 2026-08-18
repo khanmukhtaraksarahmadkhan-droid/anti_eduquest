@@ -32,11 +32,13 @@ exports.getCollegeById = async (req, res) => {
 };
 
 // Search colleges with multi-filter support
-// Accepts: q, type, ownership, state, city, university, naac, stream, approval
+// Accepts: q, courseId, course, type, ownership, state, city, university, naac, stream, approval
 exports.searchColleges = async (req, res) => {
   try {
     const params = {
       q:          req.query.q          || '',
+      courseId:   req.query.courseId   || '',
+      course:     req.query.course     || '',
       type:       req.query.type       || '',
       ownership:  req.query.ownership  || '',
       state:      req.query.state      || '',

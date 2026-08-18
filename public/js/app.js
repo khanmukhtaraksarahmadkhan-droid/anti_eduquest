@@ -352,8 +352,9 @@ async function loadTopCourses() {
     if (loader) loader.style.display = 'none';
     grid.innerHTML = courses.map(course => {
       const gradient = STREAM_COLORS[course.stream] || 'linear-gradient(135deg,#6366f1,#8b5cf6)';
+      const safeName = (course.course_name || '').replace(/'/g, "\\'");
       return `
-        <div class="course-card" onclick="searchByStream('${course.stream}')" style="cursor: pointer;">
+        <div class="course-card" onclick="filterByCourse(${course.id}, '${safeName}')" style="cursor: pointer;">
           <span class="course-stream-badge" style="background:${gradient};color:#fff;">${course.stream}</span>
           <h3 class="course-title">${course.course_name}</h3>
           <div class="course-meta">
@@ -392,8 +393,9 @@ async function loadStatesList() {
     if (loader) loader.style.display = 'none';
     grid.innerHTML = states.map(state => {
       const count = stateCounts[state] || 0;
+      const safeState = state.replace(/'/g, "\\'");
       return `
-        <div class="state-item-card" onclick="searchByTerm('${state}')">
+        <div class="state-item-card" onclick="filterByState('${safeState}')" style="cursor: pointer;">
           <div class="state-icon-avatar">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </div>
@@ -433,36 +435,51 @@ function renderTopColleges(colleges) {
   }).join('');
 }
 
+// Active navigation highlight on scroll
+function initNavbarActiveTracker() {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  if (navLinks.length === 0) return;
+
+  const sections = [
+    { id: 'home', el: document.querySelector('.hero-section'), link: document.getElementById('link-home') },
+    { id: 'colleges', el: document.getElementById('colleges'), link: document.getElementById('link-colleges') },
+    { id: 'courses', el: document.getElementById('courses'), link: document.getElementById('id-link-courses') },
+    { id: 'states', el: document.getElementById('states'), link: document.getElementById('link-states') }
+  ];
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 200;
+    sections.forEach(sec => {
+      if (sec.el && sec.link) {
+        const top = sec.el.offsetTop;
+        const height = sec.el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          sec.link.classList.add('active');
+        }
+      }
+    });
+  });
+}
+
 // Expose trigger search by term
 window.searchByTerm = function(term) {
-  const searchInput = document.getElementById('search-input');
-  if (searchInput) {
-    searchInput.value = term;
-    const searchBtn = document.getElementById('search-btn');
-    if (searchBtn) searchBtn.click();
+  if (typeof window.filterByState === 'function') {
+    window.filterByState(term);
+  } else {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.value = term;
+      const searchBtn = document.getElementById('search-btn');
+      if (searchBtn) searchBtn.click();
+    }
   }
 };
 
-// Search by stream (uses filter-stream dropdown if available, else text search)
 window.searchByStream = function(stream) {
-  const streamSelect = document.getElementById('filter-stream');
-  if (streamSelect) {
-    // Open filters panel if closed
-    const filtersGrid = document.getElementById('filters-grid');
-    if (filtersGrid && filtersGrid.style.display === 'none') {
-      filtersGrid.style.display = 'grid';
-      const label = document.getElementById('filters-toggle-label');
-      if (label) label.textContent = 'Hide Filters';
-    }
-    // Set stream filter
-    streamSelect.value = stream;
-    // Show reset button
-    const resetBtn = document.getElementById('filters-reset-btn');
-    if (resetBtn) resetBtn.style.display = 'flex';
+  if (typeof window.filterByCourse === 'function') {
+    window.filterByCourse(null, stream);
   }
-  // Trigger search with empty text but stream filter set
-  const searchBtn = document.getElementById('search-btn');
-  if (searchBtn) searchBtn.click();
 };
 
 window.filterByStream = function(stream) {
@@ -477,4 +494,5 @@ document.addEventListener('DOMContentLoaded', () => {
   loadFeaturedColleges();
   loadTopCourses();
   loadStatesList();
+  initNavbarActiveTracker();
 });

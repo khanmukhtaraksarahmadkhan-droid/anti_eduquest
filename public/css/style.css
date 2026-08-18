@@ -416,7 +416,7 @@ header.scrolled {
 }
 
 .search-panel-section {
-  margin-top: -3rem;
+  margin-top: 2.5rem;
   position: relative;
   z-index: 10;
 }
@@ -428,8 +428,8 @@ header.scrolled {
   align-items: start;
 }
 
-.search-panel,
-.top-colleges-panel {
+.search-panel {
+  position: relative;
   background: rgba(7, 26, 19, 0.95);
   border: 1px solid rgba(16, 185, 129, 0.16);
   border-radius: 28px;
@@ -697,12 +697,13 @@ header.scrolled {
 }
 
 /* Suggestion Box */
-.search-suggestions {
+.search-suggestions,
+.suggestions-box {
   position: absolute;
   top: calc(100% + 10px);
   left: 0;
   right: 0;
-  background: rgba(16, 42, 34, 0.95);
+  background: rgba(7, 26, 19, 0.98);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
@@ -715,7 +716,8 @@ header.scrolled {
   text-align: left;
 }
 
-.search-suggestions.active {
+.search-suggestions.active,
+.suggestions-box.active {
   display: block;
 }
 

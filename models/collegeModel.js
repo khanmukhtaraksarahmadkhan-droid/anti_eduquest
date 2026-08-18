@@ -54,10 +54,23 @@ const College = {
 
   // Advanced search with multi-filter support
   search: async (params) => {
-    const { q, type, ownership, state, city, university, naac, stream, approval } = params;
+    const { q, courseId, course, type, ownership, state, city, university, naac, stream, approval } = params;
 
     let conditions = [];
     let values = [];
+
+    // Filter: Specific Course ID (via college_courses junction table)
+    if (courseId && !isNaN(parseInt(courseId, 10))) {
+      conditions.push('cc.course_id = ?');
+      values.push(parseInt(courseId, 10));
+    }
+
+    // Filter: Specific Course Name or Keyword
+    if (course && course.trim() !== '') {
+      conditions.push('(c.course_name LIKE ? OR c.stream LIKE ? OR col.streams LIKE ?)');
+      const cTerm = `%${course.trim()}%`;
+      values.push(cTerm, cTerm, cTerm);
+    }
 
     // Base text search across key fields
     if (q && q.trim() !== '') {
@@ -113,8 +126,8 @@ const College = {
 
     // Filter: Stream (checks the streams column)
     if (stream && stream.trim() !== '') {
-      conditions.push('col.streams LIKE ?');
-      values.push(`%${stream.trim()}%`);
+      conditions.push('(col.streams LIKE ? OR c.stream LIKE ?)');
+      values.push(`%${stream.trim()}%`, `%${stream.trim()}%`);
     }
 
     // Filter: Approval body (checks approvals column)
